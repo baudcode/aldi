@@ -4,7 +4,8 @@ Index ALDI Products inside of a sqlite database
 
 ```
 docker build -t aldi ./
-docker push 
 
+docker image tag aldi:latest tower.local:5000/aldi:latest
+docker push tower.local:5000/aldi:latest 
 
 ```
