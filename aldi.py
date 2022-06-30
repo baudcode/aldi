@@ -27,7 +27,11 @@ def get_products(url: str):
         except ValueError as ve:
             price = -1
 
-        img = product.find("img").get("data-src")
+        try:
+            img = product.find("img").get("data-src")
+        except AttributeError:
+            img = "invalid"
+
         yield dict(title=title, price=price, img=img, id=product_id, item_class=item_class)
 
 
